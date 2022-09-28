@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <title>Store Template</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="main.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a1308a65c6.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Swiper -->
+    <section id="landing">
+      
+      <nav>
+          <p class="logo-text">Your Logo</p> 
+          <!-- Change p tag to img for your logo! -->
+        
+          <ul class="nav__links">
+              <li class="nav__link click">
+                  <a href="#shop">Shop</a>
+              </li>
+              <li class="nav__link click" onclick="toggleModal()">
+                  <a href="#" >Contact Us</a>
+              </li>
+              <li class="nav__link click">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </li>
+              
+          </ul>
+      </nav>
+
+      <header>
+          <div class="header__top">
+              <div class="typing-title">
+                  <h1 class="header-title">Shop for</h1>
+                  <h1 class="typing">Shirts</h1>
+                </div>
+            </div>
+
+          <div class="swiper landing-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide landing__swiper-slide">
+                <img src="./assets/shirts.jpg" />
+              </div>
+              <div class="swiper-slide landing__swiper-slide">
+                <img src="./assets/sweaters.jpg" />
+              </div>
+              <div class="swiper-slide landing__swiper-slide">
+                <img src="./assets/socks.jpg" />
+              </div>
+              <div class="swiper-slide landing__swiper-slide">
+                <img src="./assets/hats.jpg" />
+              </div>
+            </div>
+          </div>
+
+        </header>
+
+        <div class="modal">
+          <div class=" modal__contact">
+              <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+              <h1 class="contact__title">Contact Us</h1>
+              <form id="contact__form">
+                  <div class="form__item">
+                      <label class="form__item--label">Name</label>
+                      <input class="input" name="user_name" type="text" required ></input>
+                  </div>
+                  <div class="form__item">
+                      <label class="form__item--label">Email</label>
+                      <input class="input" name="user_email" type="email" required ></input>
+                  </div>
+                  <div class="form__item message__item">
+                      <label class="form__item--label">Message</label>
+                      <textarea class="input" name="message" type="text" required ></textarea>
+                  </div>
+                  <button id="contact__submit" class="form__submit">Submit</button>
+              </form>
+          </div>
+      </div>
+      
+      </section>
+
+      <section id="about">
+        <h1 class="section__header">
+          About Us.
+        </h1>
+        <div class="about__text">
+          <p class="about__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur et quas vitae?</p>
+          <p class="about__p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa cum earum laudantium autem in, quo dicta illum aspernatur id reiciendis!</p>
+          <p class="about__p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint modi itaque mollitia distinctio culpa similique quia quaerat eligendi dolores nostrum!</p>
+          <p class="about__p">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </section>
+      
+      <section id="shop">
+        <h1 class="section__header">
+          Welcome to the shop.
+        </h1>
+
+        <div class="filters">
+          
+        </div>
+
+        <div class="shop__item-wrapper">
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/sweater-1.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Sweater</h1>
+              <h3 class="shop__item-price">$48.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/sweater-2.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Sweater</h1>
+              <h3 class="shop__item-price">$42.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/shirt-1.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Shirt</h1>
+              <h3 class="shop__item-price">$23.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/shirt-2.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Shirt</h1>
+              <h3 class="shop__item-price">$23.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/shirt-3.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Shirt</h1>
+              <h3 class="shop__item-price">$23.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/hat-1.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Hat</h1>
+              <h3 class="shop__item-price">$19.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/hat-2.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Hat</h1>
+              <h3 class="shop__item-price">$19.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/socks-1.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Socks</h1>
+              <h3 class="shop__item-price">$12.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+
+          <div class="shop__item">
+            <img class = "shop__item-img" src="./assets/socks-2.jpg">
+            <div class="item-description">
+              <h1 class="shop__item-title">Men's Socks</h1>
+              <h3 class="shop__item-price">$12.99</h3>
+              <button class="shop__item-button">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+  </body>
+</html>
