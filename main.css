@@ -173,7 +173,7 @@ CONTACT MODAL
 nav, #about, .header, #shop {
     opacity: 1;
     visibility: visible;
-    transition: all 300ms 400ms ease;
+    transition: all 400ms ease;
 }
 
 .modal--open nav, .modal--open #about, .modal--open header, .modal--open #shop {
@@ -259,4 +259,106 @@ nav, #about, .header, #shop {
 }
 .message__item textarea {
     height: 200px;
+}
+
+/*
+Shopping Cart
+*/
+.shoppingModal--open nav, .shoppingModal--open #about, .shoppingModal--open header, .shoppingModal--open #shop {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease;
+}
+.shoppingModal--open .shoppingModal{
+    z-index: 60;
+    box-shadow: 0 20px 80px rgb(0, 0, 0, 0.4);
+    visibility: visible;
+}
+.shoppingModal--open .cart-wrapper {
+    transform: translateX(0%);    
+}
+.shoppingModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 700px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    visibility: hidden;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
+}
+.cart-wrapper {
+    background-color: whitesmoke;
+    color: black;
+    transform: translateX(110%);
+    position: relative;
+    padding: 24px 48px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 300ms ease-in;
+}
+.cart__list {
+    display: flex;
+    flex-direction: column;
+}
+.cart__img {
+    width: 10%;
+}
+.cart__title{
+    font-family: 'EB Garamond', serif;
+    padding: 48px;
+}
+.cart__item {
+    display: flex;
+    margin: 8px;
+}
+.cart__item-description {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    padding: 16px;
+}
+.cart__price {
+    font-family: 'EB Garamond', serif;  
+}
+.cart__total {
+    font-family: 'EB Garamond', serif;
+    align-self: flex-end;
+    padding: 16px;
+}
+.cart__delete-item {
+    position: absolute;
+    right: 0;
+    padding-right: 128px;
+    border: none;
+    align-self: center;
+    height: 24px;
+    transition: all 300ms ease;
+    background-color: whitesmoke;
+}
+.cart__delete-item:hover {
+    color: red;
+}
+.cart__delete-item:active {
+    color: white;
+}
+.cart__confirm-button{
+border: 2px solid green;
+color: green;
+padding: 8px;
+font-size: 16px;
+align-self: flex-end;
+transition: all 300ms ease;
+}
+.cart__confirm-button:hover{
+color: white;
+background-color: green;
+}
+.cart__confirm-button:active{
+color: green;
 }

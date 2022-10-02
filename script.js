@@ -1,4 +1,3 @@
-
 //Swiper
 var swiper = new Swiper(".landing-swiper", {
     effect: "coverflow",
@@ -54,3 +53,38 @@ function toggleModal() {
      isModalOpen = false;
  } 
 }
+
+  //Shop maker
+  const shopWrapper = document.querySelector(".shop__item-wrapper")
+
+  function renderShop() {
+    products.forEach((product) => {
+      shopWrapper.innerHTML += `
+            <div class="shop__item">
+              <img class = "shop__item-img" src="${product.imgSrc}">
+              <div class="item-description">
+                <h1 class="shop__item-title">${product.name}</h1>
+                <h3 class="shop__item-price">$${product.price}</h3>
+                <button class="shop__item-button">Add to Cart</button>
+              </div>
+            </div>
+      `
+    })
+  }
+
+renderShop();
+
+// Shopping cart function
+
+let shoppingModalOpen = false;
+
+function toggleShoppingModal() {
+  if (!shoppingModalOpen) {
+     document.body.classList += "shoppingModal--open";
+     shoppingModalOpen = true;
+ } else {
+     document.body.classList.remove("shoppingModal--open");
+     shoppingModalOpen = false;
+ } 
+}
+
