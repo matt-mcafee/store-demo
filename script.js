@@ -89,7 +89,7 @@ function toggleShoppingModal() {
 }
 
 //Add to cart function
-
+let total = 0
 function addToCart(itemId) {
   const cartList = document.querySelector(".cart__list")
   cartList.innerHTML += `
@@ -102,7 +102,7 @@ function addToCart(itemId) {
       </div>
   </li>
   `
-  let total = 0
+  
   total += products[itemId].price
 
   const cartTotal = document.querySelector(".cart__total")
