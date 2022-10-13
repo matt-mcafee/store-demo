@@ -305,6 +305,8 @@ Shopping Cart
 .cart__list {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    max-height: 400px;
 }
 .cart__img {
     width: 10%;
@@ -361,4 +363,34 @@ background-color: green;
 }
 .cart__confirm-button:active{
 color: green;
+}
+
+@media (max-width: 768px) { 
+
+    .landing__swiper-slide {
+        width: 70%;
+      }
+
+    nav {
+        margin: 0px 0%;
+    }
+
+}
+
+@media (max-width: 480px) { 
+
+    nav {
+        font-size: 14px;
+    }
+    .nav__link {
+        padding: 8px;
+        padding-top: 24px;
+    }
+    .logo-text {
+        padding: 8px;
+        padding-top: 24px;
+    }
+    .typing-title h1 {
+        font-size: 36px;
+    }
 }

@@ -65,7 +65,7 @@ function toggleModal() {
               <div class="item-description">
                 <h1 class="shop__item-title">${product.name}</h1>
                 <h3 class="shop__item-price">$${product.price}</h3>
-                <button class="shop__item-button">Add to Cart</button>
+                <button onclick="addToCart(${product.id})" class="shop__item-button">Add to Cart</button>
               </div>
             </div>
       `
@@ -88,3 +88,29 @@ function toggleShoppingModal() {
  } 
 }
 
+//Add to cart function
+
+function addToCart(itemId) {
+  const cartList = document.querySelector(".cart__list")
+  cartList.innerHTML += `
+  <li class="cart__item">
+      <img src="${products[itemId].imgSrc}" class="cart__img">
+      
+      <div class="cart__item-description">
+        <h3 class="cart__item-title">${products[itemId].name}</h3>
+        <h3 class="cart__price">$${products[itemId].price}</h3>
+      </div>
+  </li>
+  `
+  let total = 0
+  total += products[itemId].price
+
+  const cartTotal = document.querySelector(".cart__total")
+
+  cartTotal.innerHTML = `$${total}`
+}
+
+function removeFromCart(cartId) {
+  cartList = document.querySelector("cart__list")
+  cartList.removeChild(cartId)
+}
