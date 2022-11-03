@@ -424,7 +424,10 @@ Media Query
     .landing__swiper-slide {
         width: 70%;
       }
-
+      .productSwiper {
+        width: 320px;
+        height: 320px;
+    }
     nav {
         margin: 0px 0%;
     }
@@ -435,6 +438,10 @@ Media Query
 
     nav {
         font-size: 14px;
+    }
+    .productSwiper {
+        width: 200px;
+        height: 200px;
     }
     .nav__link {
         padding: 8px;
