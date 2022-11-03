@@ -8,9 +8,9 @@ var swiper = new Swiper(".landing-swiper", {
     coverflowEffect: {
       rotate: 5,
       stretch: 0,
-      depth: 15,
+      depth: 10,
       modifier: 4,
-      slideShadows: true,
+      slideShadows: false,
     },
     autoplay: {
       delay: 4000,
@@ -61,7 +61,7 @@ function toggleModal() {
     products.forEach((product) => {
       shopWrapper.innerHTML += `
             <div class="shop__item">
-              <img class = "shop__item-img" src="${product.imgSrc}">
+            <a href="#"><img class = "shop__item-img" src="${product.imgSrc}" href="#" onclick="showProduct(${product.id})"></a>
               <div class="item-description">
                 <h1 class="shop__item-title">${product.name}</h1>
                 <h3 class="shop__item-price">$${product.price}</h3>
@@ -113,4 +113,73 @@ function addToCart(itemId) {
 function removeFromCart(cartId) {
   cartList = document.querySelector("cart__list")
   cartList.removeChild(cartId)
+}
+
+
+let productModalOpen = false;
+
+function toggleProductModal() {
+  if (!productModalOpen) {
+     document.body.classList += "productModal--open";
+     productModalOpen = true;
+ } else {
+     document.body.classList.remove("productModal--open");
+     productModalOpen = false;
+ } 
+}
+
+function showProduct(itemId) {
+  toggleProductModal()
+  productModal = document.querySelector(".insertProduct")
+  productModal.innerHTML = `
+    
+      <div class="swiper productSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide productSwiperSlide">
+          <img class="productModalImg" src="${products[itemId].imgSrc}">
+        </div>
+        <div class="swiper-slide productSwiperSlide">
+          <img class="productModalImg" src="${products[itemId].imgSrc}"/>
+        </div>
+        <div class="swiper-slide productSwiperSlide">
+          <img class="productModalImg" src="${products[itemId].imgSrc}"/>
+        </div>
+        <div class="swiper-slide productSwiperSlide">
+          <img class="productModalImg" src="${products[itemId].imgSrc}"/>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+        <div class="productModalDescription">
+        <h2 class="productModalTitle">
+        ${products[itemId].name}
+        </h2>
+        <h4 class="productModalPrice">
+        $${products[itemId].price}
+        </h4>
+        <p class="productModalText">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. A blanditiis nesciunt, maxime consequuntur
+          delectus quia sapiente reprehenderit quam repudiandae culpa deleniti nulla repellat, totam, ea voluptas
+          nisi illum quisquam? Magni eius dolore voluptatum neque.
+        </p>
+        </div>
+
+  `
+  var long = new Swiper(".productSwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    });
+
 }
