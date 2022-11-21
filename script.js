@@ -89,9 +89,9 @@ function toggleShoppingModal() {
 }
 
 //Add to cart function
-let total = 0
+var total = 0
 function addToCart(itemId) {
-  const cartList = document.querySelector(".cart__list")
+  const cartList = document.querySelector(".cart__list");
   cartList.innerHTML += `
   <li class="cart__item">
       <img src="${products[itemId].imgSrc}" class="cart__img">
@@ -100,19 +100,24 @@ function addToCart(itemId) {
         <h3 class="cart__item-title">${products[itemId].name}</h3>
         <h3 class="cart__price">$${products[itemId].price}</h3>
       </div>
+
+      <button class="delete-cart-item" onclick="removeFromCart(${products[itemId].price})">Delete</button>
   </li>
-  `
+  `;
   
-  total += products[itemId].price
+  total += products[itemId].price;
 
-  const cartTotal = document.querySelector(".cart__total")
+  const cartTotal = document.querySelector(".cart__total");
 
-  cartTotal.innerHTML = `$${total}`
+  cartTotal.innerHTML = `$${total}`;
 }
 
-function removeFromCart(cartId) {
-  cartList = document.querySelector("cart__list")
-  cartList.removeChild(cartId)
+function removeFromCart(price) {
+  deleteButton = document.querySelector(".delete-cart-item");
+  deleteButton.parentElement.remove();
+  total -= price;
+  let cartTotal = document.querySelector(".cart__total");
+  cartTotal.innerHTML = `$${total}`
 }
 
 

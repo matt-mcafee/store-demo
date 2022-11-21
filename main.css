@@ -318,6 +318,7 @@ Shopping Cart
 .cart__item {
     display: flex;
     margin: 8px;
+    transition: all 300ms ease;
 }
 .cart__item-description {
     display: flex;
@@ -333,22 +334,6 @@ Shopping Cart
     align-self: flex-end;
     padding: 16px;
 }
-.cart__delete-item {
-    position: absolute;
-    right: 0;
-    padding-right: 128px;
-    border: none;
-    align-self: center;
-    height: 24px;
-    transition: all 300ms ease;
-    background-color: whitesmoke;
-}
-.cart__delete-item:hover {
-    color: red;
-}
-.cart__delete-item:active {
-    color: white;
-}
 .cart__confirm-button{
 border: 2px solid green;
 color: green;
@@ -363,6 +348,16 @@ background-color: green;
 }
 .cart__confirm-button:active{
 color: green;
+}
+
+.delete-cart-item {
+    border: none;
+    color: red;
+    background-color: whitesmoke;
+    padding-left: 8px;
+}
+.delete-cart-item:active {
+    color: white;
 }
 /*
 Product Modal
